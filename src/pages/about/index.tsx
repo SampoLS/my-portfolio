@@ -8,6 +8,7 @@ import mongoDBIcon from '../../assets/icons/mongodb.svg';
 import nodeJsIcon from '../../assets/icons/nodejs.svg';
 import pythonIcon from '../../assets/icons/python.svg';
 import gitIcon from '../../assets/icons/git.svg';
+import showEffect from '../../utils/showEffect';
 
 const familiar = [
     { iconName: 'HTML5', icon: htmlIcon },
@@ -39,9 +40,7 @@ function hideMask(clsName: string) {
 }
 
 export default function AboutPage() {
-    setTimeout(() => {
-        (document.querySelector('.wrapper') as HTMLElement).style.opacity = '1';
-    }, 800);
+    showEffect();
 
     const mouseEnterFamiliar = (j: number) => {
         showMask('familiar', j);
