@@ -51,6 +51,9 @@ aside .avatar {
     justify-content: center;
     margin-top: 20px;
 }
+.avatar:hover {
+    cursor: pointer;
+}
 
 aside .img-wrapper {
     width: 100px;
@@ -194,4 +197,18 @@ li a:hover {
 .hobby-list li {
     opacity: 0;
     transition: all 300ms linear;
+}
+
+.home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home .letter {
+    opacity: 0;
+    font-size: 30px;
+    color: orange;
+    font-weight: bold;
+    font-family: 'Apple Chancery', monospace;
 }

@@ -5,9 +5,10 @@ const hobbies = ['Logic', 'Mathematics', 'Physics', 'Philosophy', 'Machine Learn
 
 export default function HobbiesPage() {
     showEffect();
-    
+
     useEffect(() => {
         const lists = document.querySelectorAll('.list') as NodeListOf<HTMLElement>;
+
         for (let i = 0; i < lists.length; i++) {
             setTimeout(() => {
                 lists[i].style.opacity = '1';

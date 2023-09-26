@@ -70,7 +70,7 @@ export default function AboutPage() {
                         hover={mouseEnterFamiliar}
                         leave={mouseLeaveFamiliar}
                         name='familiar'
-                        text="I'm good at it"
+                        text="I'm Good At It"
                     />
                     <ShowIcons
                         logos={unfamiliar}
@@ -78,7 +78,7 @@ export default function AboutPage() {
                         hover={mouseEnterUnfamiliar}
                         leave={mouseLeaveUnfamiliar}
                         name='unfamiliar'
-                        text="I know about it"
+                        text="I Know About It"
                     />
                 </div>
             </section>
