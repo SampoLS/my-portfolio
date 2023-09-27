@@ -1,3 +1,5 @@
+import { Fragment, useCallback, useEffect, useState } from 'react';
+
 import ShowIcons from '../../components/ShowIcons';
 
 import reactIcon from '../../assets/icons/react.svg';
@@ -9,7 +11,6 @@ import nodeJsIcon from '../../assets/icons/nodejs.svg';
 import pythonIcon from '../../assets/icons/python.svg';
 import gitIcon from '../../assets/icons/git.svg';
 import showEffect from '../../utils/showEffect';
-import { Fragment, useCallback, useEffect, useState } from 'react';
 import Loading from '../../components/Loading';
 
 const familiar = [
