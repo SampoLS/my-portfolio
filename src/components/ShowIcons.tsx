@@ -16,14 +16,9 @@ type Props = {
 
 export type Logos = Array<Logo>;
 
-export default function ShowIcons({
-    logos,
-    color,
-    hover,
-    leave,
-    name,
-    text
-}: Props) {
+export default function ShowIcons(props: Props) {
+    const { logos, color, hover, leave, name, text } = props;
+    
     return (
         <Fragment>
             {logos.map((logo: Logo, i: number) => {

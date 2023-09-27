@@ -9,6 +9,8 @@ import nodeJsIcon from '../../assets/icons/nodejs.svg';
 import pythonIcon from '../../assets/icons/python.svg';
 import gitIcon from '../../assets/icons/git.svg';
 import showEffect from '../../utils/showEffect';
+import { Fragment, useCallback, useEffect, useState } from 'react';
+import Loading from '../../components/Loading';
 
 const familiar = [
     { iconName: 'HTML5', icon: htmlIcon },
@@ -40,48 +42,62 @@ function hideMask(clsName: string) {
 }
 
 export default function AboutPage() {
-    showEffect();
+    const [isLoading, setIsLoading] = useState(true);
+    let initialTimer = 1000;
 
-    const mouseEnterFamiliar = (j: number) => {
+    useEffect(() => {
+        const wrapper = document.querySelector('.wrapper') as HTMLElement; 
+        if (wrapper) showEffect();
+
+        setTimeout(() => {
+            setIsLoading(false);
+        }, initialTimer);
+    }, [isLoading]);
+
+    const mouseEnterFamiliar = useCallback((j: number) => {
         showMask('familiar', j);
-    }
-    const mouseLeaveFamiliar = () => {
+    }, []);
+    const mouseLeaveFamiliar = useCallback(() => {
         hideMask('familiar');
-    }
-    const mouseEnterUnfamiliar = (j: number) => {
+    }, []);
+    const mouseEnterUnfamiliar = useCallback((j: number) => {
         showMask('unfamiliar', j);
-    }
-    const mouseLeaveUnfamiliar = () => {
+    }, []);
+    const mouseLeaveUnfamiliar = useCallback(() => {
         hideMask('unfamiliar');
-    }
+    }, []);
 
     return (
-        <section className="wrapper">
-            <article className="title">
-                <h1>About</h1>
-                <p>Hi there, I'm Sampo, from China. I'm a front-end developer that I taught myself and I want to apply for a job as an internship. If you could hire me, that would be so grateful.</p>
-            </article>
-            <section className="my-skills">
-                <h2>My Skills</h2>
-                <div className='icon-card'>
-                    <ShowIcons
-                        logos={familiar}
-                        color={'#27374D'}
-                        hover={mouseEnterFamiliar}
-                        leave={mouseLeaveFamiliar}
-                        name='familiar'
-                        text="I'm Good At It"
-                    />
-                    <ShowIcons
-                        logos={unfamiliar}
-                        color={'#526D82'}
-                        hover={mouseEnterUnfamiliar}
-                        leave={mouseLeaveUnfamiliar}
-                        name='unfamiliar'
-                        text="I Know About It"
-                    />
-                </div>
-            </section>
-        </section>
+        <Fragment>
+            {isLoading ? <Loading /> : (
+                <section className="wrapper">
+                    <article className="title">
+                        <h1>About</h1>
+                        <p>Hi there, I'm Sampo, from China. I'm a front-end developer that I taught myself and I want to apply for a job as an internship. If you could hire me, that would be so grateful.</p>
+                    </article>
+                    <section className="my-skills">
+                        <h2>My Skills</h2>
+                        <div className='icon-card'>
+                            <ShowIcons
+                                logos={familiar}
+                                color={'#27374D'}
+                                hover={mouseEnterFamiliar}
+                                leave={mouseLeaveFamiliar}
+                                name='familiar'
+                                text="I'm Good At It"
+                            />
+                            <ShowIcons
+                                logos={unfamiliar}
+                                color={'#526D82'}
+                                hover={mouseEnterUnfamiliar}
+                                leave={mouseLeaveUnfamiliar}
+                                name='unfamiliar'
+                                text="I Know About It"
+                            />
+                        </div>
+                    </section>
+                </section>
+            )}
+        </Fragment>
     );
 }
