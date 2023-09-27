@@ -1,7 +1,10 @@
+import { useEffect } from "react";
 import showEffect from "../../utils/showEffect";
 
 export default function ContactPage() {
-    showEffect();
+    useEffect(() => {
+        showEffect();
+    }, []);
 
     return (
         <section className="wrapper">

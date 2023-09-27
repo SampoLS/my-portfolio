@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import showEffect from "../../utils/showEffect";
 import Loading from "../../components/Loading";
+import { appendLetter } from "./utils";
 
 const text = 'Thanks For Your Visiting!'.split('');
 
@@ -13,7 +14,7 @@ export default function HomePage() {
 
         if (span) {
             showEffect('.letter');
-            appendLetter(span, initialTimer);
+            appendLetter(span, text, initialTimer);
         }
 
         setTimeout(() => {
@@ -32,10 +33,3 @@ export default function HomePage() {
     );
 }
 
-function appendLetter(span: HTMLElement, initialTimer: number) {
-    for (let i = 0; i < text.length; i++) {
-        setTimeout(() => {
-            if (span) span.textContent += text[i];
-        }, initialTimer + i * 100);
-    }
-}

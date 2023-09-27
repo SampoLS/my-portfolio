@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import showEffect from "../../utils/showEffect";
 import Loading from "../../components/Loading";
+import { showBobbies } from "./utils";
 
 const hobbies = ['Logic', 'Mathematics', 'Physics', 'Philosophy', 'Machine Learning'];
 
@@ -12,13 +13,11 @@ export default function HobbiesPage() {
         const lists = document.querySelectorAll('.list') as NodeListOf<HTMLElement>;
         const wrapper = document.querySelector('.wrapper') as HTMLElement; 
 
-        if (wrapper) showEffect();
-
-        for (let i = 0; i < lists.length; i++) {
-            setTimeout(() => {
-                lists[i].style.opacity = '1';
-            }, initialTimer + i * 400 );
+        if (wrapper) {
+            showEffect();
+            showBobbies(lists, initialTimer);
         }
+
 
         setTimeout(() => {
             setIsLoading(false);
