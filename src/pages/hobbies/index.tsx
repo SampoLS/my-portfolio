@@ -18,7 +18,6 @@ export default function HobbiesPage() {
             showBobbies(lists, initialTimer);
         }
 
-
         setTimeout(() => {
             setIsLoading(false);
         }, initialTimer);

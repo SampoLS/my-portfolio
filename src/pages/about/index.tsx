@@ -9,7 +9,7 @@ import { mouseEnterFamiliar, mouseEnterUnfamiliar, mouseLeaveFamiliar, mouseLeav
 
 export default function AboutPage() {
     const [isLoading, setIsLoading] = useState(true);
-    let initialTimer = 1000;
+    const initialTimer = 1000;
 
     useEffect(() => {
         const wrapper = document.querySelector('.wrapper') as HTMLElement; 
