@@ -1,17 +1,12 @@
 export const showMask = (clsName: string, j: number)=> {
     const el = document.getElementsByClassName(clsName) as HTMLCollectionOf<HTMLElement>;
-    for (let i = 0; i < el.length; i++) {
-        if (i === j) {
-            el[i].style.opacity = '1';
-        }
-    }
+    for (let i = 0; i < el.length; i++)
+        if (i === j) el[i].style.opacity = '1';
 }
 
 export const hideMask = (clsName: string) => {
     const el = document.getElementsByClassName(clsName) as HTMLCollectionOf<HTMLElement>;
-    for (let i = 0; i < el.length; i++) {
-        el[i].style.opacity = '0';
-    }
+    for (let i = 0; i < el.length; i++) el[i].style.opacity = '0';
 }
 
 export const mouseEnterFamiliar = (j: number) => {
