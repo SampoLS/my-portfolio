@@ -19,8 +19,8 @@ export const mouseLeaveFamiliar = () => {
 
 export const mouseEnterUnfamiliar = (j: number) => {
     showMask('unfamiliar', j);
-};
+}
 
 export const mouseLeaveUnfamiliar = () => {
     hideMask('unfamiliar');
-};
+}
