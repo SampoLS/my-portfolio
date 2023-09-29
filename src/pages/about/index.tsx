@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from 'react';
 
 import ShowIcons from '../../components/ShowIcons';
-import showEffect from '../../utils/showEffect';
+import showOpacityEffect from '../../utils/showOpacityEffect';
 import Loading from '../../components/Loading';
 
 import { familiar, unfamiliar } from './icons';
@@ -13,7 +13,7 @@ export default function AboutPage() {
 
     useEffect(() => {
         const wrapper = document.querySelector('.wrapper') as HTMLElement; 
-        if (wrapper) showEffect();
+        if (wrapper) showOpacityEffect();
 
         setTimeout(() => {
             setIsLoading(false);

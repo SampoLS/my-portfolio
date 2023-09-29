@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import showEffect from "../../utils/showEffect";
+import showOpacityEffect from "../../utils/showOpacityEffect";
 import Loading from "../../components/Loading";
 import { showBobbies } from "./utils";
 
@@ -14,7 +14,7 @@ export default function HobbiesPage() {
         const wrapper = document.querySelector('.wrapper') as HTMLElement; 
 
         if (wrapper) {
-            showEffect();
+            showOpacityEffect();
             showBobbies(lists, initialTimer);
         }
 

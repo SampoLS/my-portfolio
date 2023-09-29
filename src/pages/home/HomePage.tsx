@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import showEffect from "../../utils/showEffect";
+import showOpacityEffect from "../../utils/showOpacityEffect";
 import Loading from "../../components/Loading";
 import { appendLetter } from "./utils";
 
@@ -13,7 +13,7 @@ export default function HomePage() {
         const span = document.querySelector('.letter') as HTMLElement;
 
         if (span) {
-            showEffect('.letter');
+            showOpacityEffect('.letter');
             appendLetter(span, text, initialTimer);
         }
 

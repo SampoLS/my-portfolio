@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import showEffect from "../../utils/showEffect";
+import showOpacityEffect from "../../utils/showOpacityEffect";
 
 export default function ContactPage() {
     useEffect(() => {
-        showEffect();
+        showOpacityEffect();
     }, []);
 
     return (
