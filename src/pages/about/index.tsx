@@ -5,7 +5,12 @@ import showOpacityEffect from '../../utils/showOpacityEffect';
 import Loading from '../../components/Loading';
 
 import { familiar, unfamiliar } from './icons';
-import { mouseEnterFamiliar, mouseEnterUnfamiliar, mouseLeaveFamiliar, mouseLeaveUnfamiliar } from './events';
+import {
+    mouseEnterFamiliar,
+    mouseEnterUnfamiliar,
+    mouseLeaveFamiliar,
+    mouseLeaveUnfamiliar
+} from './events';
 
 export default function AboutPage() {
     const [isLoading, setIsLoading] = useState(true);
